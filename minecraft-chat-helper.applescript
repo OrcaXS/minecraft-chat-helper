@@ -25,16 +25,21 @@ set mcchat_clipboard to ""
 try
 	set mcchat_clipboard to the clipboard as string
 end try
-set mcchat_input to the text returned of (display dialog "保持 Minecraft 处于暂停界面并在此输入聊天内容：" with title "Minecraft 中文聊天辅助工具" default answer mcchat_clipboard)
+set mcchat_input to the text returned of (display dialog "Input sth" with title "Minecraft Input Helper" default answer mcchat_clipboard)
 set the clipboard to mcchat_input
-tell application "System Events"
-	keystroke tab using command down -- Switch to Minecraft
+	tell application "System Events"
+		tell process "java"
+			set frontmost to true
+			perform action "AXRaise" of window 1
+		end tell
+	end tell
+	
 	delay 0.5
-	key code 53 -- "Escape" to quit pause menu
-	delay 0.25
-	keystroke "t"
-	delay 0.25
-	keystroke "v" using control down -- Paste
-	delay 0.25
-	keystroke return
+	
+	tell application "System Events"
+		keystroke "v" using control down -- paste
+		delay 0.1
+		key code 36
+	end tell
 end tell
+
