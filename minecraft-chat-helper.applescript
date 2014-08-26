@@ -25,12 +25,12 @@ set mcchat_clipboard to ""
 try
 	set mcchat_clipboard to the clipboard as string
 end try
-set mcchat_input to the text returned of (display dialog "Input sth" with title "Minecraft Input Helper" default answer mcchat_clipboard)
+set mcchat_input to the text returned of (display dialog "Input the text to be pasted in Minecraft" with title "Minecraft Input Helper" default answer mcchat_clipboard)
 set the clipboard to mcchat_input
 	tell application "System Events"
-		tell process "java"
+		tell process "java" -- Minecraft process
 			set frontmost to true
-			perform action "AXRaise" of window 1
+			perform action "AXRaise" of window 1 -- active window 1
 		end tell
 	end tell
 	
@@ -39,7 +39,7 @@ set the clipboard to mcchat_input
 	tell application "System Events"
 		keystroke "v" using control down -- paste
 		delay 0.1
-		key code 36
+		key code 36 -- return
 	end tell
 end tell
 
