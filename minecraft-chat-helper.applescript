@@ -22,10 +22,7 @@
 -- THE SOFTWARE.
 
 set mcchat_clipboard to ""
-try
-	set mcchat_clipboard to the clipboard as string
-end try
-set mcchat_input to the text returned of (display dialog "Input the text to be pasted in Minecraft" with title "Minecraft Input Helper" default answer mcchat_clipboard)
+set mcchat_input to the text returned of (display dialog "Input the text to be pasted in Minecraft" with title "Minecraft Input Helper" default answer "")
 set the clipboard to mcchat_input
 	tell application "System Events"
 		tell process "java" -- Minecraft process
