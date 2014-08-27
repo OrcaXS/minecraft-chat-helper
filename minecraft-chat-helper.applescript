@@ -31,9 +31,11 @@ set the clipboard to mcchat_input
 		end tell
 	end tell
 	
-	delay 0.5
+	delay 0.3
 	
 	tell application "System Events"
+		keystorke "t"
+		delay 0.1
 		keystroke "v" using control down -- paste
 		delay 0.1
 		key code 36 -- return
