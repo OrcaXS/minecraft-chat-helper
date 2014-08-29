@@ -34,6 +34,8 @@ set the clipboard to mcchat_input
 	delay 0.3
 	
 	tell application "System Events"
+		key code 53 -- escape
+		delay 0.1
 		keystorke "t"
 		delay 0.1
 		keystroke "v" using control down -- paste
