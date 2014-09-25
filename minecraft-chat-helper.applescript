@@ -21,7 +21,6 @@
 -- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 -- THE SOFTWARE.
 
-set mcchat_clipboard to ""
 set mcchat_input to the text returned of (display dialog "Input the text to be pasted in Minecraft" with title "Minecraft Input Helper" default answer "")
 set the clipboard to mcchat_input
 	tell application "System Events"
@@ -36,11 +35,11 @@ set the clipboard to mcchat_input
 	tell application "System Events"
 		key code 53 -- escape
 		delay 0.1
-		keystorke "t"
+		keystroke "t"
 		delay 0.1
 		keystroke "v" using control down -- paste
 		delay 0.1
 		key code 36 -- return
 	end tell
-end tell
+end
 
