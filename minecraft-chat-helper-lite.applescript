@@ -23,8 +23,8 @@
 
 tell application "System Events"
 	tell process "java" -- Minecraft process
-			set frontmost to true
-			perform action "AXRaise" of window 1 -- active window 1
+		set frontmost to true
+		perform action "AXRaise" of window 1 -- active window 1
 	end tell
 end tell
 	
