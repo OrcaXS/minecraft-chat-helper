@@ -1,4 +1,4 @@
-﻿-- The MIT License (MIT)
+-- The MIT License (MIT)
 --
 -- Copyright (c) 2014 Star Brilliant <m13253@hotmail.com>
 -- Copyright (c) 2014 Lancelot Fong <ilbfy08@gmail.com>
@@ -21,25 +21,23 @@
 -- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 -- THE SOFTWARE.
 
-set mcchat_input to the text returned of (display dialog "Input the text to be pasted in Minecraft" with title "Minecraft Input Helper" default answer "")
-set the clipboard to mcchat_input
-	tell application "System Events"
-		tell process "java" -- Minecraft process
+tell application "System Events"
+	tell process "java" -- Minecraft process
 			set frontmost to true
 			perform action "AXRaise" of window 1 -- active window 1
-		end tell
 	end tell
+end tell
 	
-	delay 0.3
+delay 0.3
 	
-	tell application "System Events"
-		key code 53 -- escape
-		delay 0.1
-		keystroke "t"
-		delay 0.1
-		keystroke "v" using control down -- paste
-		delay 0.1
-		key code 36 -- return
-	end tell
+tell application "System Events"
+	key code 53 -- escape
+	delay 0.1
+	keystroke "t"
+	delay 0.1
+	keystroke "v" using control down -- paste
+	delay 0.1
+	key code 36 -- return
+end tell
 end
 
